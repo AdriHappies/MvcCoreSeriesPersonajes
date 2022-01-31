@@ -1,0 +1,31 @@
+﻿@model List<Personaje>
+
+@{ 
+    Serie serie = ViewData["SERIE"] as Serie;
+}
+
+<h1>Personajes de @serie.Nombre</h1>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Personaje</th>
+            <th>Imagen</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Personaje per in Model)
+            {
+                <tr>
+                    <td>@per.Nombre</td>
+                    <td><img src="@per.Imagen" style="width:150px; height:150px"/></td>
+                </tr>
+            }
+    </tbody>
+</table>
+
+<a class="nav-item" asp-controller="Series"
+   asp-action="DetailsSerie"
+   asp-route-id="@serie.IdSerie">
+    Volver a Detalles Serie
+</a>

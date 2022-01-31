@@ -1,0 +1,22 @@
+﻿@model List<Serie>
+
+<h1>Series</h1>
+
+@foreach (Serie s in Model)
+{
+    <div>
+        <a class="nav-item" asp-controller="Series"
+           asp-action="DetailsSerie"
+           asp-route-id="@s.IdSerie">
+            @s.Nombre
+        </a>
+    </div>
+}
+
+<br/>
+
+<a class="btn btn-danger"
+   asp-controller="Series"
+   asp-action="UpdatePersonaje">
+    Cambiar personaje de serie
+</a>

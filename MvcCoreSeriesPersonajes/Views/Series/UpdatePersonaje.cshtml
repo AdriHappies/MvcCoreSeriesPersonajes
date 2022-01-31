@@ -1,0 +1,34 @@
+﻿@model List<Personaje>
+
+@{ 
+    List<Serie> series = ViewData["SERIES"] as List<Serie>;
+}
+
+<h1>Cambiar Personaje de Serie</h1>
+
+<form method="post">
+    <label>Seleccione una serie:</label>
+    <select name="idserie">
+        @foreach (Serie s in series)
+        {
+
+            <option value="@s.IdSerie">
+                @s.Nombre
+            </option>
+        }
+    </select>
+    <label>Seleccione un personaje:</label>
+    <select name="idpersonaje">
+        @foreach (Personaje p in Model)
+        {
+
+            <option value="@p.IdPersonaje">
+                @p.Nombre
+            </option>
+        }
+    </select>
+    <button class="btn btn-success" type="submit">
+        Cambiar
+    </button>
+</form>
+

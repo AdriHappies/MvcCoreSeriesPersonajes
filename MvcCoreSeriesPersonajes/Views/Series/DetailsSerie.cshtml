@@ -1,0 +1,19 @@
+﻿@model Serie
+
+<h1>@Model.Nombre</h1>
+
+<img src="@Model.Imagen"/>
+
+<h4>@Model.Puntuacion</h4>
+
+<a class="btn btn-info"
+   asp-controller="Series"
+   asp-action="PersonajesSerie"
+   asp-route-idserie="@Model.IdSerie">
+    Personajes
+</a>
+
+<a asp-controller="Series"
+   asp-action="Series">
+    Volver a series
+</a>
